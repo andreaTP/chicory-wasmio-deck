@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -37,45 +38,68 @@
     <div class="slides">
       <section data-markdown>
         <textarea data-template>
-# Chicory
+          # Chicory
 
-<img src="./imgs/chicory1.png" height="30%" width="30%" style="height: 30%; width: 30%;"></img>
+          <img src="./imgs/chicory1.png" height="30%" width="30%" style="height: 30%; width: 30%;"></img>
 
-### creating a language-native Wasm runtime
+          ### creating a language-native Wasm runtime
         </textarea>
       </section>
 
       <section>
         <div class="row">
           <div class="col">
-          <img style="width: 60%;" src="imgs/us.jpg">
+            <img style="width: 60%;" src="imgs/us.jpg">
           </div>
-            <div class="col tiny">
-              <h4>Benjamin Eckel</h3>
-            
-              <p>@and_prf</p>
+          <div class="col tiny">
+            <h4>Benjamin Eckel</h3>
+
+              <p>@bhelx</p>
               <img style="width: 50%;" src="imgs/dylibso-logo.svg">
-              <br/>
-            </div>
-            <div class="col tiny">
-              <h4>Andrea Peruffo</h3>
-            
+              <br />
+          </div>
+          <div class="col tiny">
+            <h4>Andrea Peruffo</h3>
+
               <p>@and_prf</p>
               <img style="width: 50%;" src="imgs/red_hat_logo.svg">
-              <br/>
-            </div>
+              <br />
           </div>
+        </div>
       </section>
+
+      <!-- <section> -->
+      <!--   <section data-markdown> -->
+      <!--     <textarea data-template> -->
+      <!--       # Agenda -->
+
+      <!--       - Why -->
+      <!--       - Current status -->
+      <!--       - What -->
+      <!--       - How -->
+
+      <!--     </textarea> -->
+      <!--   </section> -->
+      <!-- </section> -->
 
       <section>
         <section data-markdown>
           <textarea data-template>
-# Agenda
+            ## JVM value creation
 
-- Why
-- Current status
-- What
-- How
+            <img style="width: 10%;" src="imgs/java-servers.jpeg">
+            <br />
+
+            - Enterprise
+            - Cloud
+            - Mobile
+            - Tools and services
+            - Manufacturers
+            - Banks
+            - Insurance
+
+            Note:
+            There is 30 years of JVM software in the world creating hundreds of billions of dollars in value.
 
           </textarea>
         </section>
@@ -84,19 +108,63 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-# JVM in the industry
+            ## Enterprise software is not flexible
 
-<img style="width: 10%;" src="imgs/java-servers.jpeg">
-<br/>
+            - Few options for building fast and safe plug-in ecosystems
+            - Wasm is the ideal solution for plug-in systems
 
-- Enterprise
-- Cloud
-- Mobile
-- Tools and services
-- Manufacturers
-- Banks
-- Insurances
+            Note:
 
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## How do we execute Wasm in the JVM?
+
+            - Many mature options
+            - wasmtime, wasmer, wasmedge, v8, etc
+
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Embedding into JVM has downsides
+
+            - Distribution: Makes your app architecture specific
+            - Runtime: Execution leaves safety and observability of the JVM
+
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Language Native Runtimes
+
+            - Wazero has a similar purpose
+            - The solution is a "language native" runtime
+
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Introducing Chicory
+
+
+            Note:
           </textarea>
         </section>
       </section>
@@ -104,9 +172,9 @@
       <section data-markdown>
         <textarea data-template>
           # Thanks and Q&A
-          <br/>          
+          <br />
           <a href="https://github.com/andreaTP/chicory-wasmio-deck">https://github.com/andreaTP/chicory-wasmio-deck</a>
-          <br/>
+          <br />
         </textarea>
       </section>
 
@@ -220,4 +288,5 @@
   </script>
 
 </body>
+
 </html>
