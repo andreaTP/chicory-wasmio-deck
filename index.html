@@ -68,24 +68,10 @@
         </div>
       </section>
 
-      <!-- <section> -->
-      <!--   <section data-markdown> -->
-      <!--     <textarea data-template> -->
-      <!--       # Agenda -->
-
-      <!--       - Why -->
-      <!--       - Current status -->
-      <!--       - What -->
-      <!--       - How -->
-
-      <!--     </textarea> -->
-      <!--   </section> -->
-      <!-- </section> -->
-
       <section>
         <section data-markdown>
           <textarea data-template>
-            ## JVM value creation
+            # JVM value creation
 
             <img style="width: 10%;" src="imgs/java-servers.jpeg">
             <br />
@@ -108,7 +94,7 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-            ## Enterprise software is not flexible
+            # Enterprise software is not flexible
 
             - Few options for building fast and safe plug-in ecosystems
             - Wasm is the ideal solution for plug-in systems
@@ -122,7 +108,24 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-            ## How do we execute Wasm in the JVM?
+            # Java failed to be the solution
+
+            <img style="width: 10%;" src="imgs/JavaAppletIcon.png">
+            <br />
+
+            - Performance
+            - Safety
+
+            Note:
+
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            # How do we execute Wasm in the JVM?
 
             - Many mature options
             - wasmtime, wasmer, wasmedge, v8, etc
@@ -135,12 +138,15 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-            ## Embedding into JVM has downsides
+            # Embedding into JVM has downsides
 
             - Distribution: Makes your app architecture specific
             - Runtime: Execution leaves safety and observability of the JVM
 
             Note:
+            Error handling: A crash of the WASM runtime causes unrecoverable exit
+            Escape the JVM memory enabling attacks
+
           </textarea>
         </section>
       </section>
@@ -148,9 +154,11 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-            ## Language Native Runtimes
+            # Language Native Runtimes
 
-            - Wazero has a similar purpose
+            <img style="width: 20%;" src="imgs/racingVSjeep.jpeg">
+            <br/>
+
             - The solution is a "language native" runtime
 
             Note:
@@ -161,9 +169,124 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-            ## Introducing Chicory
+            # Wazero
 
+            <img style="width: 20%;" src="imgs/podium.jpeg">
+            <br/>
 
+            - Following the lead
+
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            # Within the JVM boundaries
+
+            - WORA: (Write once run anywhere) Platform independent bytecode
+            - Guaranteed Memory Safety
+            - Fault Isolation
+            - Self contained programs
+            - Super advanced JIT
+            - ... more!
+
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            # Introducing Chicory
+
+            <img src="./imgs/chicory1.png" height="30%" width="30%" style="height: 30%; width: 30%;"></img>
+            <br/>
+
+            [https://github.com/dylibso/chicory](https://github.com/dylibso/chicory)
+
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            # Inception
+
+            - side project
+            - 6 months of development
+
+            Note:
+            OPTIONAL
+            a more personal note on how we met thanks to Edoardo?
+
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            # Native tools
+
+            - maven plugins
+            - code generators
+            
+            <br/>
+            code in vcs: 13K LOC
+            <br/>
+            with generated: 250K LOC
+
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            <img src="./imgs/jruby.png" height="20%" width="20%" style="height: 20%; width: 20%;"></img>
+            ## +
+            <img src="./imgs/ruby-prism.png" height="20%" width="20%" style="height: 20%; width: 20%;"></img>
+
+            ## An Unexpected Journey
+            
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            # More use-cases
+
+            - [Camel](https://camel.apache.org/components/4.4.x/wasm-component.html) producer
+            - [Kafka Connect](https://lburgazzoli.github.io/posts/2024-02-01_apache_kafka_connect_meets_wasm_part_1/) transformation
+            - [Apache Pulsar](https://lburgazzoli.github.io/posts/2023-06-13-apache-camel-pulsar-function-pt_1/) function
+            - [Kroxylicious](https://github.com/andreaTP/kroxylicious-wasm) filter
+            - [Keycloak](https://github.com/pedroigor/keycloak-wasm-policy-provider) policy provider
+            
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            # Roadmap
+
+            - Make all tests green with the interpreter
+            - Implement validation logic
+            - Performance improvements
+            - AOT compiler (generate JVM bytecode from Wasm module)
+            
             Note:
           </textarea>
         </section>
