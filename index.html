@@ -73,16 +73,23 @@
           <textarea data-template>
             # JVM value creation
 
-            <img style="width: 10%;" src="imgs/java-servers.jpeg">
-            <br />
-
-            - Enterprise
-            - Cloud
-            - Mobile
-            - Tools and services
-            - Manufacturers
-            - Banks
-            - Insurance
+            <div class="row">
+              <div class="col" style="background: inherit;">
+                <ul>
+                  <li>Enterprise</li>
+                  <li>Cloud</li>
+                  <li>Mobile</li>
+                  <li>Tools and services</li>
+                  <li>Manufacturers</li>
+                  <li>Banks</li>
+                  <li>Insurances</li>
+                </ul>
+              </div>
+              <div class="col">
+                <img style="width: 50%;" src="imgs/java-servers.jpeg">
+                <br />
+              </div>
+            </div>
 
             Note:
             There is 30 years of JVM software in the world creating hundreds of billions of dollars in value.
@@ -96,8 +103,8 @@
           <textarea data-template>
             # Enterprise software is not flexible
 
-            - Few options for building fast and safe plug-in ecosystems
-            - Wasm is the ideal solution for plug-in systems
+            - Few options for building fast and safe plug-in ecosystems <!-- .element: class="fragment" -->
+            - Wasm is the ideal solution for plug-in systems <!-- .element: class="fragment" -->
 
             Note:
 
@@ -113,8 +120,9 @@
             <img style="width: 10%;" src="imgs/JavaAppletIcon.png">
             <br />
 
-            - Performance
-            - Safety
+            - Performance <!-- .element: class="fragment" -->
+            - Safety <!-- .element: class="fragment" -->
+            - Dependencies <!-- .element: class="fragment" -->
 
             Note:
 
@@ -140,8 +148,8 @@
           <textarea data-template>
             # Embedding into JVM has downsides
 
-            - Distribution: Makes your app architecture specific
-            - Runtime: Execution leaves safety and observability of the JVM
+            - Distribution: Makes your app architecture specific <!-- .element: class="fragment" -->
+            - Runtime: Execution leaves safety and observability of the JVM <!-- .element: class="fragment" -->
 
             Note:
             Error handling: A crash of the WASM runtime causes unrecoverable exit
@@ -159,7 +167,7 @@
             <img style="width: 20%;" src="imgs/racingVSjeep.jpeg">
             <br/>
 
-            - The solution is a "language native" runtime
+            The solution is a "language native" runtime
 
             Note:
           </textarea>
@@ -174,7 +182,7 @@
             <img style="width: 20%;" src="imgs/podium.jpeg">
             <br/>
 
-            - Following the lead
+            Following the lead
 
             Note:
           </textarea>
@@ -250,6 +258,14 @@
       <section>
         <section data-markdown>
           <textarea data-template>
+            # Use cases
+
+            Note:
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
             <img src="./imgs/jruby.png" height="20%" width="20%" style="height: 20%; width: 20%;"></img>
             ## +
             <img src="./imgs/ruby-prism.png" height="20%" width="20%" style="height: 20%; width: 20%;"></img>
@@ -259,9 +275,7 @@
             Note:
           </textarea>
         </section>
-      </section>
 
-      <section>
         <section data-markdown>
           <textarea data-template>
             # More use-cases
@@ -284,6 +298,7 @@
 
             - Make all tests green with the interpreter
             - Implement validation logic
+            - WASI Preview 1 support
             - Performance improvements
             - AOT compiler (generate JVM bytecode from Wasm module)
             
