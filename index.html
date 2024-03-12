@@ -230,8 +230,11 @@
             - 6 months of development
 
             Note:
-            OPTIONAL
-            a more personal note on how we met thanks to Edoardo?
+            Edoardo Vacchi introduced me to Ben and we shared the vision of a Java native Runtime for Wasm
+            We want it to be zero dependencies to be easily portable as possible.
+            In 6 months we got to the point where most of the V1 spec is implemented on the "happy path", making it
+            possible to run real world programs compiled to wasm, and
+            we started implementing the validation logic.
 
           </textarea>
         </section>
@@ -240,26 +243,33 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-            # Native tools
+            # Build a language native runtime 1/2
 
-            - maven plugins
-            - code generators
-            
-            <br/>
-            code in vcs: 13K LOC
-            <br/>
-            with generated: 250K LOC
+            - generate code for `OpCodes`
+            - wasm corpus
 
             Note:
 
-            Mechanics around the testing infrastructure
-            What you need to do if you want to do it yourself
+            If you want to build a language native runtime for wasm those are the tools that are working for us.
+          </textarea>
+        </section>
+      </section>
 
-            test from wast to JUnit
-            wasm corpus
-            opcodes
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            # Build a language native runtime 2/2
+            generate tests!
 
-            a list
+            - download the [WebAssembly/testsuite](https://github.com/WebAssembly/testsuite)
+            - download [`wast2json`](https://github.com/WebAssembly/wabt)
+            - use `wast2json` on the `testsuite` `.wast` files
+            - get `json` + `compiled programs`
+            - generate JUnit from the `json`
+
+            Note:
+
+            Those are the steps to generate JUnit tests from the testsuite
           </textarea>
         </section>
       </section>
@@ -287,9 +297,26 @@
 
         <section data-markdown>
           <textarea data-template>
+            <img src="./imgs/keycloak.svg" height="30%" width="30%" style="height: 30%; width: 30%;"></img>
+            <br/>
+
+            [Keycloak](https://github.com/pedroigor/keycloak-wasm-policy-provider) policy provider
+            
+            Note:
+
+            Keycloak is a popular Identity Management software, allowing features like Single Sign On to be easily implemented within corporate services.
+            It's widely used in the Enterprise and it has a wide range of functionalities, for example it allows you to authenticate your accounts with a variety of services, even the old one like Kerberos.
+
+            Sometimes, the configuration is not enough and you need to write a little plugin to fully customize the behavior of the authentication logic.
+            In this example we integrated a Keycloak Policy Provider able to load and execute wasm functions to verify the user authentication, the wasm module have access to the user context using Host Functions.
+          </textarea>
+        </section>
+      </section>
+
+        <section data-markdown>
+          <textarea data-template>
             # More use-cases
 
-            - [Keycloak](https://github.com/pedroigor/keycloak-wasm-policy-provider) policy provider
             - [Apache Camel](https://camel.apache.org/components/4.4.x/wasm-component.html) producer
             - [Kafka Connect](https://lburgazzoli.github.io/posts/2024-02-01_apache_kafka_connect_meets_wasm_part_1/) transformation
             - [Apache Pulsar](https://lburgazzoli.github.io/posts/2023-06-13-apache-camel-pulsar-function-pt_1/) function
@@ -297,8 +324,7 @@
             
             Note:
 
-            Pick one and elaborate
-            Scaling the complexity of the application by extensions
+            By using extension mechanisms we are scaling the complexity of the applications.
           </textarea>
         </section>
       </section>
