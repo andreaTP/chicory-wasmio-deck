@@ -1,2 +1,2 @@
 serve:
-	python3 serve.py
+	python serve.py
