@@ -42,7 +42,7 @@
 
           <img src="./imgs/chicory1.png" height="30%" width="30%" style="height: 30%; width: 30%;"></img>
 
-          Creating a Language-Native Wasm Runtime
+          Creating a Language-Native (JVM) Wasm Runtime
         </textarea>
       </section>
 
@@ -52,18 +52,18 @@
             <img style="width: 60%;" src="imgs/us.jpg">
           </div>
           <div class="col tiny">
-            <h4>Benjamin Eckel</h3>
+            <h3>Benjamin Eckel</h3>
 
-              <p>@bhelx</p>
-              <img style="width: 50%;" src="imgs/dylibso-logo.svg">
-              <br />
+            <p>@bhelx</p>
+            <img style="width: 50%;" src="imgs/dylibso-logo.svg">
+            <br />
           </div>
           <div class="col tiny">
-            <h4>Andrea Peruffo</h3>
+            <h3>Andrea Peruffo</h3>
 
-              <p>@and_prf</p>
-              <img style="width: 50%;" src="imgs/red_hat_logo.svg">
-              <br />
+            <p>@and_prf</p>
+            <img style="width: 50%;" src="imgs/red_hat_logo.svg">
+            <br />
           </div>
         </div>
       </section>
@@ -81,7 +81,7 @@
                   <li>Mobile</li>
                   <li>Tools and Services</li>
                   <li>Manufacturers</li>
-                  <li>Banks</li>
+                  <li>Banks and Finance</li>
                   <li>Healthcare</li>
                   <li>Insurance</li>
                 </ul>
@@ -94,11 +94,14 @@
 
             Note:
 
-            So, why are we talking about the JVM? What makes the JVM valuable?
+            So, why are we talking about the JVM at a Wasm conference?
             Stop for a moment and think about how much of the world is powered
-            by the JVM. There is 30 years of JVM software in the world creating
+            by the JVM.
+            There is 30 years of JVM software in the world creating
             hundreds of billions of dollars in value across nearly
-            all business verticals.
+            all business verticals. Think about all the massive public companies
+            that are built on the JVM, as well as the ecosystems like Android that
+            power billions of devices across the world.
           </textarea>
         </section>
       </section>
@@ -111,10 +114,15 @@
             Wasm unlocks the full value of applications by making them programmable
 
             Note:
-            Okay Wasm is the future, why do we care about the past?
-            We believe the most compelling reason to use Wasm will be that
+
+            Okay Wasm is the future, why do we care about
+            the past 30 years of software? We believe the most
+            compelling reason to use Wasm will be that
             it can unlock the full value of your applications by turning
-            them into a programmable platform.
+            them into a programmable platform. Wasm will become the
+            highest bandwidth interface to our libraries and applications
+            and help us scale the complexity of integrations orders of magnitude
+            beyond HTTP APIs. And this is why targeting the JVM is important.
 
           </textarea>
         </section>
@@ -123,13 +131,19 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-            # How do we execute Wasm in the JVM?
+            # How do we execute Wasm in the JVM today?
 
-            - Many mature options
+            - Many mature options for running Wasm
             - wasmtime, wasmer, wasmedge, v8, etc
 
             Note:
+
             There are a number of Wasm runtimes that you can run from Java today.
+            So why do we need a new runtime?
+
+            The primary issue is these runtimes are all written in languages
+            like c++ and rust and distributed as native code.
+
           </textarea>
         </section>
       </section>
@@ -139,7 +153,7 @@
           <textarea data-template>
             # Embedding into JVM has downsides
 
-            - Distribution: Makes your app architecture specific <!-- .element: class="fragment" -->
+            - Distribution: Makes your app platform specific <!-- .element: class="fragment" -->
             - Runtime: Execution leaves safety and observability of the JVM <!-- .element: class="fragment" -->
 
             Note:
@@ -160,16 +174,16 @@
           <textarea data-template>
             # Within the JVM boundaries
 
-            - WORA: (Write once run anywhere) Platform independent bytecode
             - Guaranteed Memory Safety
             - Fault Isolation
-            - Self contained programs
             - Super advanced JIT
+            - Self contained programs
+            - WORA: (Write once run anywhere) Platform independent bytecode
             - ... more!
 
             Note:
 
-            So why what are the benefits of staying within the boundaries of the JVM?
+            So lets talk about specifics, what are the benefits of staying within the boundaries of the JVM?
 
             Error handling: A crash of the WASM runtime causes unrecoverable exit
             Escape the JVM memory enabling attacks
