@@ -8,7 +8,7 @@
   <!-- TITLE OF THE PRESENTATION -->
   <!-- ============================================================ -->
   <title>
-    Chicory: creating a language-native Wasm runtime
+    Chicory: Creating a Language-Native Wasm Runtime
   </title>
   <!-- ============================================================ -->
 
@@ -42,7 +42,7 @@
 
           <img src="./imgs/chicory1.png" height="30%" width="30%" style="height: 30%; width: 30%;"></img>
 
-          ### creating a language-native Wasm runtime
+          Creating a Language-Native Wasm Runtime
         </textarea>
       </section>
 
@@ -71,7 +71,7 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-            # JVM value creation
+            # The JVM: 30 Years of Value Creation
 
             <div class="row">
               <div class="col" style="background: inherit;">
@@ -79,10 +79,11 @@
                   <li>Enterprise</li>
                   <li>Cloud</li>
                   <li>Mobile</li>
-                  <li>Tools and services</li>
+                  <li>Tools and Services</li>
                   <li>Manufacturers</li>
                   <li>Banks</li>
-                  <li>Insurances</li>
+                  <li>Healthcare</li>
+                  <li>Insurance</li>
                 </ul>
               </div>
               <div class="col">
@@ -92,8 +93,12 @@
             </div>
 
             Note:
-            There is 30 years of JVM software in the world creating hundreds of billions of dollars in value.
 
+            So, why are we talking about the JVM? What makes the JVM valuable?
+            Stop for a moment and think about how much of the world is powered
+            by the JVM. There is 30 years of JVM software in the world creating
+            hundreds of billions of dollars in value across nearly
+            all business verticals.
           </textarea>
         </section>
       </section>
@@ -101,30 +106,15 @@
       <section>
         <section data-markdown>
           <textarea data-template>
-            # Enterprise software is not flexible
+            # Why Run Wasm in My JVM Application?
 
-            - Few options for building fast and safe plug-in ecosystems <!-- .element: class="fragment" -->
-            - Wasm is the ideal solution for plug-in systems <!-- .element: class="fragment" -->
-
-            Note:
-
-          </textarea>
-        </section>
-      </section>
-
-      <section>
-        <section data-markdown>
-          <textarea data-template>
-            # Java Applets failed to be the solution
-
-            <img style="width: 10%;" src="imgs/JavaAppletIcon.png">
-            <br />
-
-            - Performance <!-- .element: class="fragment" -->
-            - Safety <!-- .element: class="fragment" -->
-            - Dependencies <!-- .element: class="fragment" -->
+            Wasm unlocks the full value of applications by making them programmable
 
             Note:
+            Okay Wasm is the future, why do we care about the past?
+            We believe the most compelling reason to use Wasm will be that
+            it can unlock the full value of your applications by turning
+            them into a programmable platform.
 
           </textarea>
         </section>
@@ -139,6 +129,7 @@
             - wasmtime, wasmer, wasmedge, v8, etc
 
             Note:
+            There are a number of Wasm runtimes that you can run from Java today.
           </textarea>
         </section>
       </section>
@@ -155,36 +146,6 @@
             Error handling: A crash of the WASM runtime causes unrecoverable exit
             Escape the JVM memory enabling attacks
 
-          </textarea>
-        </section>
-      </section>
-
-      <section>
-        <section data-markdown>
-          <textarea data-template>
-            # Language Native Runtimes
-
-            <img style="width: 20%;" src="imgs/racingVSjeep.jpeg">
-            <br/>
-
-            The solution is a "language native" runtime
-
-            Note:
-          </textarea>
-        </section>
-      </section>
-
-      <section>
-        <section data-markdown>
-          <textarea data-template>
-            # Wazero
-
-            <img style="width: 20%;" src="imgs/podium.jpeg">
-            <br/>
-
-            Following the lead
-
-            Note:
           </textarea>
         </section>
       </section>
@@ -209,10 +170,40 @@
       <section>
         <section data-markdown>
           <textarea data-template>
+            # Language Native Runtimes
+
+            <img style="width: 20%;" src="imgs/racingVSjeep.jpeg">
+            <br />
+
+            The solution is a "language native" runtime
+
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            # Wazero
+
+            <img style="width: 20%;" src="imgs/podium.jpeg">
+            <br />
+
+            Following the lead
+
+            Note:
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
             # Introducing Chicory
 
             <img src="./imgs/chicory1.png" height="30%" width="30%" style="height: 30%; width: 30%;"></img>
-            <br/>
+            <br />
 
             [https://github.com/dylibso/chicory](https://github.com/dylibso/chicory)
 
@@ -247,6 +238,13 @@
 
             - generate code for `OpCodes`
             - wasm corpus
+            - maven plugins
+            - code generators
+
+            <br />
+            code in vcs: 13K LOC
+            <br />
+            with generated: 250K LOC
 
             Note:
 
@@ -290,7 +288,7 @@
             <img src="./imgs/ruby-prism.png" height="20%" width="20%" style="height: 20%; width: 20%;"></img>
 
             ## An Unexpected Journey
-            
+
             Note:
           </textarea>
         </section>
@@ -298,35 +296,40 @@
         <section data-markdown>
           <textarea data-template>
             <img src="./imgs/keycloak.svg" height="30%" width="30%" style="height: 30%; width: 30%;"></img>
-            <br/>
+            <br />
 
             [Keycloak](https://github.com/pedroigor/keycloak-wasm-policy-provider) policy provider
-            
+
             Note:
 
-            Keycloak is a popular Identity Management software, allowing features like Single Sign On to be easily implemented within corporate services.
-            It's widely used in the Enterprise and it has a wide range of functionalities, for example it allows you to authenticate your accounts with a variety of services, even the old one like Kerberos.
+            Keycloak is a popular Identity Management software, allowing features like Single Sign On to be easily
+            implemented within corporate services.
+            It's widely used in the Enterprise and it has a wide range of functionalities, for example it allows you to
+            authenticate your accounts with a variety of services, even the old one like Kerberos.
 
-            Sometimes, the configuration is not enough and you need to write a little plugin to fully customize the behavior of the authentication logic.
-            In this example we integrated a Keycloak Policy Provider able to load and execute wasm functions to verify the user authentication, the wasm module have access to the user context using Host Functions.
+            Sometimes, the configuration is not enough and you need to write a little plugin to fully customize the
+            behavior of the authentication logic.
+            In this example we integrated a Keycloak Policy Provider able to load and execute wasm functions to verify
+            the user authentication, the wasm module have access to the user context using Host Functions.
           </textarea>
         </section>
       </section>
 
-        <section data-markdown>
-          <textarea data-template>
-            # More use-cases
+      <section data-markdown>
+        <textarea data-template>
+          # More use-cases
 
-            - [Apache Camel](https://camel.apache.org/components/4.4.x/wasm-component.html) producer
-            - [Kafka Connect](https://lburgazzoli.github.io/posts/2024-02-01_apache_kafka_connect_meets_wasm_part_1/) transformation
-            - [Apache Pulsar](https://lburgazzoli.github.io/posts/2023-06-13-apache-camel-pulsar-function-pt_1/) function
-            - [Kroxylicious](https://github.com/andreaTP/kroxylicious-wasm) filter
-            
-            Note:
+          - [Apache Camel](https://camel.apache.org/components/4.4.x/wasm-component.html) producer
+          - [Kafka Connect](https://lburgazzoli.github.io/posts/2024-02-01_apache_kafka_connect_meets_wasm_part_1/)
+          transformation
+          - [Apache Pulsar](https://lburgazzoli.github.io/posts/2023-06-13-apache-camel-pulsar-function-pt_1/) function
+          - [Kroxylicious](https://github.com/andreaTP/kroxylicious-wasm) filter
 
-            By using extension mechanisms we are scaling the complexity of the applications.
-          </textarea>
-        </section>
+          Note:
+
+          By using extension mechanisms we are scaling the complexity of the applications.
+        </textarea>
+      </section>
       </section>
 
       <section>
@@ -339,7 +342,7 @@
             - WASI Preview 1 support
             - Performance improvements
             - AOT compiler (generate JVM bytecode from Wasm module)
-            
+
             Note:
           </textarea>
         </section>
