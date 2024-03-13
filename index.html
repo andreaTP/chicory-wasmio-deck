@@ -143,8 +143,13 @@
             - Runtime: Execution leaves safety and observability of the JVM <!-- .element: class="fragment" -->
 
             Note:
-            Error handling: A crash of the WASM runtime causes unrecoverable exit
-            Escape the JVM memory enabling attacks
+
+            Distribution: The primary reason people target the JVM is
+            for it's platform dependence. This violates it.
+
+            Runtime: Jumping into the native code leaves the safety
+            and observability of the JVM. It also adds complexity and overhead
+            when translating across the boundary.
 
           </textarea>
         </section>
@@ -163,6 +168,11 @@
             - ... more!
 
             Note:
+
+            So why what are the benefits of staying within the boundaries of the JVM?
+
+            Error handling: A crash of the WASM runtime causes unrecoverable exit
+            Escape the JVM memory enabling attacks
           </textarea>
         </section>
       </section>
